@@ -1,7 +1,6 @@
 import heapq
 import time
 
-# 1. Complete graph of Mahikeng local municipality
 graph = {
     "Disaneng": ["Mahikeng", "Madibogo"],
     "Mahikeng": ["Disaneng", "Mmabatho", "Slurry", "Bakerville", "Madibogo"],
@@ -18,7 +17,6 @@ graph = {
     "Madibogo": ["Disaneng", "Mahikeng", "Sannieshof"]
 }
 
-# 2. Distance between areas (km)
 weights = {
     ("Disaneng", "Mahikeng"): 25,
     ("Disaneng", "Madibogo"): 35,
@@ -39,7 +37,6 @@ weights = {
     ("Madibogo", "Sannieshof"): 35
 }
 
-# 3. Heuristic to goal = Coligny (based on traffic per city from the PDF)
 heuristic = {
     "Disaneng": 70,
     "Mahikeng": 50,
@@ -56,7 +53,6 @@ heuristic = {
     "Madibogo": 60
 }
 
-# 4. Undirected edge cost
 def get_cost(a, b, weights):
     if (a, b) in weights:
         return weights[(a, b)]
@@ -65,7 +61,6 @@ def get_cost(a, b, weights):
     else:
         raise ValueError(f"No weight found between '{a}' and '{b}'")
 
-# A* Search code
 def astar(graph, weights, heuristic, start, goal):
     open_set = []
     heapq.heappush(open_set, (heuristic[start], start))
@@ -111,7 +106,6 @@ goal = "Coligny"
 
 path, visited_order, total_cost = astar(graph, weights, heuristic, start, goal)
 
-# Display results
 print("\n" + "="*50)
 print("A* SEARCH RESULTS")
 print("="*50)
