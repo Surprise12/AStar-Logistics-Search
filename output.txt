@@ -1,0 +1,12 @@
+============================================================
+TRUCK LOGISTICS ROUTE OPTIMIZATION
+Using A* Search Algorithm
+============================================================
+
+Start: Disaneng
+Goal: Coligny
+
+Optimal Path: Disaneng -> Mahikeng -> Bakerville -> Lichtenburg -> Coligny
+Total Distance: 110 km
+
+Visited Order: ['Disaneng', 'Mahikeng', 'Bakerville', 'Mmabatho', 'Slurry', 'Madibogo', 'Lichtenburg', 'Coligny']
